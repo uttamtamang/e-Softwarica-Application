@@ -11,7 +11,7 @@ import androidx.fragment.app.Fragment;
 
 //import Fragment;
 
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment{
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {

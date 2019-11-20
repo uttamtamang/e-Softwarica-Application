@@ -25,7 +25,7 @@ public class AboutUsFragment extends Fragment {
     {
         View v = inflater.inflate(R.layout.fragment_about_us,container,false);
 
-        webView = (WebView) v.findViewById(aboutUs);
+        webView = v.findViewById(aboutUs);
         webView.setWebViewClient(new WebViewClient());
         webView.loadUrl("https://softwarica.edu.np/");
 
