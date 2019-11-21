@@ -35,8 +35,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         String userName = etuserName.getText().toString();
         String password = etpassword.getText().toString();
 
+        //Validation
+        if(etuserName.getText().toString().matches("")){
+            etuserName.setError("Enter Your Username");
+            return;
+        }
+        if(etpassword.getText().toString().matches("")){
+            etpassword.setError("Enter Your correct password");
+            return;
+        }
+
         if(userName.equals("softwarica") && password.equals("coventry"))
         {
+            Toast.makeText(getApplicationContext(), "Login Successful",Toast.LENGTH_LONG).show();
             Intent intent = new Intent(this, HomeActivity.class);
             startActivity(intent);
         }
@@ -44,5 +55,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         {
             Toast.makeText(getApplicationContext(), "SORRY INVALID USER ID OR PASSWORD",Toast.LENGTH_LONG).show();
         }
+        etpassword.getText().clear();
+        etuserName.getText().clear();
     }
 }

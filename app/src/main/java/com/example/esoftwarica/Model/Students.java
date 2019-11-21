@@ -1,16 +1,18 @@
-package com.example.esoftwarica;
+package com.example.esoftwarica.Model;
 
 public class Students {
 
     private String name,address,gender;
     private int age;
+    private int imageId;
 
-   public Students(String name, String address, String gender, int age)
+   public Students(String name, String address, String gender, int age,int imageId)
    {
        this.name = name;
        this.address= address;
        this.age= age;
        this.gender = gender;
+       this.imageId= imageId;
    }
 
 
@@ -45,5 +47,14 @@ public class Students {
     public void setAge(int age) {
         this.age = age;
     }
+
+    public int getImageId() {
+        return imageId;
+    }
+
+    public void setImageId(int imageId) {
+        this.imageId = imageId;
+    }
+
 
 }

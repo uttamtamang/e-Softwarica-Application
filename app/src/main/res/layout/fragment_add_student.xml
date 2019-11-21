@@ -32,6 +32,7 @@
         android:id="@+id/studentAge"
         android:textSize="20sp"
         android:hint="Age of Student"
+        android:inputType="number"
         android:layout_marginBottom="10dp"
         android:padding="10dp"
         />
@@ -43,27 +44,34 @@
         android:textSize="20sp"
         android:layout_marginBottom="5sp"
         android:padding="10dp"/>
-    <RadioButton
+    <RadioGroup
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/rdoMale"
-        android:text="Male"
-        android:textSize="15sp"
-        android:layout_marginBottom="5sp"/>
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/rdoFemale"
-        android:text="Female"
-        android:textSize="15sp"
-        android:layout_marginBottom="5sp"/>
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/rdoOthers"
-        android:text="Others"
-        android:textSize="15sp"
-        android:layout_marginBottom="5sp"/>
+        android:id="@+id/selectGender">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/rdoMale"
+            android:text="Male"
+            android:textSize="15sp"
+            android:layout_marginBottom="5sp"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/rdoFemale"
+            android:text="Female"
+            android:textSize="15sp"
+            android:layout_marginBottom="5sp"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/rdoOthers"
+            android:text="Others"
+            android:textSize="15sp"
+            android:layout_marginBottom="5sp"/>
+
+    </RadioGroup>
 
     <EditText
         android:layout_width="match_parent"

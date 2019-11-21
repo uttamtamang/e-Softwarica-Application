@@ -3,22 +3,22 @@ package com.example.esoftwarica;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.ClipData;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.Switch;
 
+import com.example.esoftwarica.AboutUs.AboutUsFragment;
+import com.example.esoftwarica.AddStudent.AddStudentFragment;
+import com.example.esoftwarica.Home.HomeFragment;
+import com.example.esoftwarica.Model.Students;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class HomeActivity extends AppCompatActivity {
-    RecyclerView recyclerView;
 
+    public static List<Students> studentsList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,15 +32,12 @@ public class HomeActivity extends AppCompatActivity {
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                 new HomeFragment()).commit();
 
-        recyclerView = findViewById(R.id.recyclerView);
 
-        List<Students> studentsList = new ArrayList<>();
-        studentsList.add(new Students("Uttam Tamang","Nuwakot","Male",22));
-        studentsList.add(new Students("Asmita Adhikari","Kathmandu","Female",21));
+        studentsList = new ArrayList<>();
+        studentsList.add(new Students("Uttam Tamang","Nuwakot","Male",22,R.drawable.boy));
+        studentsList.add(new Students("Asmita Adhikari","Kathmandu","Female",21,R.drawable.girl));
 
-        StudentAdapter studentAdapter = new StudentAdapter(this,studentsList);
-        recyclerView.setAdapter(studentAdapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener navListner =
