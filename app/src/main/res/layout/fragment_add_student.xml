@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center_horizontal"
-    android:layout_margin="10dp">
+    android:background="#D5D8DC">
 
 
     <TextView
@@ -13,8 +13,10 @@
         android:text="Student Registration"
         android:gravity="center"
         android:id="@+id/infoText"
-        android:textSize="35sp"
-        android:layout_marginBottom="10dp"
+        android:textSize="30sp"
+        android:layout_margin="10dp"
+        android:fontFamily="sans-serif-light"
+        android:textStyle="bold"
         />
 
     <EditText
@@ -23,7 +25,8 @@
         android:id="@+id/studentName"
         android:textSize="20sp"
         android:hint="Name of Student"
-        android:layout_marginBottom="10dp"
+        android:background="@drawable/edit_text"
+        android:layout_margin="10dp"
         android:padding="10dp"/>
 
     <EditText
@@ -32,8 +35,9 @@
         android:id="@+id/studentAge"
         android:textSize="20sp"
         android:hint="Age of Student"
+        android:background="@drawable/edit_text"
         android:inputType="number"
-        android:layout_marginBottom="10dp"
+        android:layout_margin="10dp"
         android:padding="10dp"
         />
 
@@ -42,12 +46,15 @@
         android:layout_height="wrap_content"
         android:text="Gender"
         android:textSize="20sp"
-        android:layout_marginBottom="5sp"
-        android:padding="10dp"/>
+        android:layout_margin="5dp"
+        android:padding="5dp"
+        android:textStyle="bold"/>
     <RadioGroup
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/selectGender">
+        android:id="@+id/selectGender"
+        android:layout_margin="10dp"
+        >
 
         <RadioButton
             android:layout_width="wrap_content"
@@ -79,7 +86,8 @@
         android:id="@+id/studentAddress"
         android:textSize="20sp"
         android:hint="Address of Student"
-        android:layout_marginBottom="10dp"
+        android:background="@drawable/edit_text"
+        android:layout_margin="10dp"
         android:padding="10dp"
         />
     <Button
@@ -88,7 +96,7 @@
         android:id="@+id/btnRegistration"
         android:text="REGISTER"
         android:padding="10dp"
-        android:layout_margin="25dp"
+        android:layout_margin="10dp"
         android:textColor="#fff"
         android:textSize="20sp"
         android:background="@drawable/custom_button"

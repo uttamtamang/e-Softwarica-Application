@@ -6,17 +6,23 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity"
-    android:layout_margin="10dp"
     android:layout_gravity="center_vertical"
+    android:background="#D5D8DC"
     >
-  <TextView
+<!--  <TextView-->
+<!--      android:layout_width="match_parent"-->
+<!--      android:layout_height="wrap_content"-->
+<!--      android:text="Login Form"-->
+<!--      android:gravity="center"-->
+<!--      android:textSize="50sp"-->
+<!--      android:textColor="#2AF598"-->
+<!--      android:layout_marginBottom="50dp"/>-->
+
+  <ImageView
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:text="Login Form"
-      android:gravity="center"
-      android:textSize="50sp"
-      android:textColor="#2AF598"
-      android:layout_marginBottom="50dp"/>
+      android:src="@drawable/softwarica"
+      android:layout_margin="10dp"/>
 
 
   <EditText
@@ -24,18 +30,23 @@
       android:layout_height="wrap_content"
       android:id="@+id/userName"
       android:hint="Enter your username"
-      android:gravity="center"
+      android:background="@drawable/edit_text"
+      android:padding="10dp"
       android:layout_margin="10dp"
+      android:drawableLeft="@drawable/ic_account_circle_black_24dp"
+      android:drawablePadding="10dp"
      />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/password"
         android:hint="Enter your password"
-        android:gravity="center"
+        android:background="@drawable/edit_text"
+        android:padding="10dp"
         android:layout_margin="10dp"
         android:inputType="textPassword"
-
+        android:drawableLeft="@drawable/ic_lock_outline_black_24dp"
+        android:drawablePadding="10dp"
         />
     <Button
         android:layout_width="match_parent"

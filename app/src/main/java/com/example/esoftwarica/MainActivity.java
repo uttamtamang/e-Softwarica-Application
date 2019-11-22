@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             return;
         }
         if(etpassword.getText().toString().matches("")){
-            etpassword.setError("Enter Your correct password");
+            etpassword.setError("Enter Your password");
             return;
         }
 
@@ -50,12 +50,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Toast.makeText(getApplicationContext(), "Login Successful",Toast.LENGTH_LONG).show();
             Intent intent = new Intent(this, HomeActivity.class);
             startActivity(intent);
+
+            etpassword.getText().clear();
+            etuserName.getText().clear();
         }
         else
         {
+            etuserName.setError("Please enter valid username");
+            etpassword.setError("Please enter valid password");
             Toast.makeText(getApplicationContext(), "SORRY INVALID USER ID OR PASSWORD",Toast.LENGTH_LONG).show();
+            etuserName.requestFocus();
         }
-        etpassword.getText().clear();
-        etuserName.getText().clear();
+
     }
 }

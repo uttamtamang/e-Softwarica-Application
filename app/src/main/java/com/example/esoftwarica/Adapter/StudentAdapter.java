@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -19,6 +20,7 @@ import java.util.List;
 public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentViewHolder> {
     Context mContext;
     List<Students> studentsList;
+
 
     public StudentAdapter(Context mContext,List<Students> studentsList){
         this.mContext = mContext;
@@ -43,10 +45,18 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentV
         holder.btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Toast.makeText(mContext.getApplicationContext(), students.getName()+" "+ "is Deleted!",Toast.LENGTH_LONG).show();
                 studentsList.remove(i);
                 notifyDataSetChanged();
             }
         });
+        holder.image.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(mContext.getApplicationContext(), "My name is"+ ' '+students.getName(),Toast.LENGTH_LONG).show();
+            }
+        });
+
     }
 
     @Override

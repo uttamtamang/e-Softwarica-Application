@@ -1,6 +1,7 @@
 package com.example.esoftwarica.AddStudent;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -52,32 +53,59 @@ public class AddStudentFragment extends Fragment {
         Register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //Validation
+                if(etStudentName.getText().toString().matches("")){
+                    etStudentName.setError("Enter Student Name");
+                    return;
+                }
+
+                if(etStudentAge.getText().toString().matches("")){
+                    etStudentAge.setError("Enter Student Age");
+                    return;
+                }
+                if(etStudentAddress.getText().toString().matches("")){
+                    etStudentAddress.setError("Enter Student Address");
+                    return;
+                }
+
                 name = etStudentName.getText().toString();
                 address = etStudentAddress.getText().toString();
                 age = Integer.parseInt(etStudentAge.getText().toString());
 
-                int selectGender = Gender.getCheckedRadioButtonId();
-                RadioButton radioButton = view.findViewById(selectGender);
-                gender = radioButton.getText().toString();
-                if(gender.equals("Male")){
-                    Image = image[0];
+
+                try {
+                    int selectGender = Gender.getCheckedRadioButtonId();
+                    RadioButton radioButton = view.findViewById(selectGender);
+                    gender = radioButton.getText().toString();
+                    if (gender.equals("Male")) {
+                        Image = image[0];
+                    } else if (gender.equals("Female")) {
+                        Image = image[1];
+                    } else if (gender.equals("Others")) {
+                        Image = image[2];
+                    }
+//                else if(gender.matches(""))
+//                {
+//                    Toast.makeText(getActivity(), "Please select gender", Toast.LENGTH_LONG).show();
+//                }
+//                else{
+//                    Toast.makeText(getActivity(), "Please select gender", Toast.LENGTH_LONG).show();
+//                }
+                    Students students = new Students(name, address, gender, age, Image);
+                    studentsList = HomeActivity.studentsList;
+                    studentsList.add(students);
+                    Toast.makeText(getActivity(),"Student registration successful",Toast.LENGTH_LONG).show();
+                    etStudentName.getText().clear();
+                    etStudentAddress.getText().clear();
+                    etStudentAge.getText().clear();
+                    Gender.clearCheck();
+
                 }
-                else if (gender.equals("Female")){
-                    Image = image[1];
-                }
-                else
-                {
-                    Image = image[2];
+                catch(Exception e) {
+                    Toast.makeText(getActivity(), "Please select gender", Toast.LENGTH_LONG).show();
                 }
 
-                Students students = new Students(name, address, gender, age, Image);
-                studentsList = HomeActivity.studentsList;
-                studentsList.add(students);
-                Toast.makeText(getActivity(),"Student registration successful",Toast.LENGTH_LONG).show();
-                etStudentName.getText().clear();
-                etStudentAddress.getText().clear();
-                etStudentAge.getText().clear();
-                Gender.clearCheck();
+
             }
         });
         return view;
